@@ -1,9 +1,9 @@
 -- Table definitions for the tournament project.
 
-# Drop table if table already exists
-DROP TABLE IF EXISTS standing;
-DROP TABLE IF EXISTS match;
-DROP TABLE IF EXISTS player;
+-- Create and connect to tournament database
+DROP DATABASE IF EXISTS tournament;
+CREATE DATABASE tournament;
+\c tournament;
 
 -- Player Table:
 CREATE TABLE player (id SERIAL PRIMARY KEY, 
@@ -15,7 +15,7 @@ CREATE TABLE match (match_id INTEGER,
 					score INTEGER DEFAULT 0,
 					PRIMARY KEY(match_id,player_id));
 
--- Standing View Table:
+-- Standing View:
 CREATE VIEW standing as SELECT player.id, player.name, SUM(match.score) AS wins, COUNT(match.match_id) AS matches
                  FROM player LEFT JOIN match 
                  ON player.id = match.player_id 
