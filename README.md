@@ -11,8 +11,8 @@ This project has two parts: defining the database schema (SQL table definitions)
 #Instructions
 1. [Install Vagrant and VirtualBox](https://www.udacity.com/wiki/ud197/install-vagrant)
 2. Download or clone this project [here] (https://github.com/thuynh8/udacity-swiss-tournament-project.git)
-3. Navigate to the project in the terminal, then use the command  `vagrant up` (powers on the virtual machine) followed by `vagrant ssh` (logs into the virtual machine). Once you have executed the vagrant ssh command, you will want to `cd /vagrant` to change directory to the synced folders in order to work on your project, once your `cd /vagrant`, if you type `ls` on the command line, you'll see your tournament folder.
-4. Run `psql` followed by `\i tournament.sql` to build and access the database.
+3. Navigate to the project in the terminal, then use the command  `vagrant up` (powers on the virtual machine) followed by `vagrant ssh` (logs into the virtual machine). Once you have executed the vagrant ssh command, you will want to `cd /vagrant` to change directory to the synced folders in order to work on your project, once your `cd /vagrant`, if you type `ls` on the command line, you'll see the tournament folder.
+4. Run `psql -f tournament.sql` to build and access the database.
 5. To run the series of tests defined in this test suite, run the program from the command line `$ python tournament_test.py`. 
 
 #Sources
